@@ -25,14 +25,21 @@ abstract class Activity
     }
 
     protected void ShowSpinner(int seconds)
+{
+    string[] spinner = { "|", "/", "-", "\\" };
+    DateTime endTime = DateTime.Now.AddSeconds(seconds);
+    int i = 0;
+
+    while (DateTime.Now < endTime)
     {
-        for (int i = 0; i < seconds; i++)
-        {
-            Console.Write(".");
-            Thread.Sleep(1000);
-        }
-        Console.WriteLine();
+        Console.Write(spinner[i % spinner.Length]);
+        Thread.Sleep(200);
+        Console.Write("\b \b");
+        i++;
     }
+
+    Console.WriteLine();
+}
 
     public abstract void DoActivity(int duration);
 }

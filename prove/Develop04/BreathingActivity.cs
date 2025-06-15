@@ -8,7 +8,7 @@ class BreathingActivity : Activity
 
     public override void DoActivity(int duration)
     {
-        int cycleTime = 6; // 3초 들이마시고, 3초 내쉬기
+        int cycleTime = 6;
         int cycles = duration / cycleTime;
 
         for (int i = 0; i < cycles; i++)
@@ -23,8 +23,8 @@ class BreathingActivity : Activity
     private void AnimatedBreath(bool inhale)
     {
         int totalSteps = 10;
-        int totalDuration = 3000; // 3초
-        int baseDelay = totalDuration / ((totalSteps * (totalSteps + 1)) / 2); // 가속/감속
+        int totalDuration = 3000;
+        int baseDelay = totalDuration / ((totalSteps * (totalSteps + 1)) / 2);
 
         for (int i = 1; i <= totalSteps; i++)
         {
